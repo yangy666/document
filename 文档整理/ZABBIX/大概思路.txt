@@ -1,0 +1,7 @@
+对于数据库的监控
+1、创建授权用户，需要有super，process
+2、/etc/zabbix/.my.cnf添加授权的账号密码
+3、zabbix_agent.conf中添加Include=/etc/zabbix/zabbix_agentd.d/*.conf，UnsafeUserParameters=1，Timeout根据情况调整
+4、创建/etc/zabbix/zabbix_agentd.d/userparameter_mysql.conf文件
+
+5、创建监控脚本/etc/zabbix/scripts/mysql.sh

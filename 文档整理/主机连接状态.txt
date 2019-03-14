@@ -1,0 +1,1 @@
+netstat -anptu|egrep -v "Active|Proto"|awk '{if($5 != "0.0.0.0:*" && $5 !=":::*"){print $4 ";" $5}}'|awk -F: '{print $1":"$2}'|egrep -v '^:'|awk -F";" '{if ($2 != "127.0.0.1"){print $1 ";" $2}}'|sort|uniq
